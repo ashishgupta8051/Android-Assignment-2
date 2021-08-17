@@ -26,6 +26,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    viewBinding{
+        enabled = true
+    }
 }
 
 dependencies {
@@ -56,4 +60,10 @@ dependencies {
     //Scalable size unit
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
+
+    //Round ImageView
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
 }

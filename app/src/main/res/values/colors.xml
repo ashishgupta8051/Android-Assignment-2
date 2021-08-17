@@ -18,4 +18,5 @@
     <color name="colorTextOther">#FAD303</color>
     <color name="colorThemeExtra">#FF5252</color>
     <color name="silver">#616a6b</color>
+    <color name="color_links">#0645AD</color>
 </resources>

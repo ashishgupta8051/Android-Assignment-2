@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/AndroidInternAssignment2/app/src/main/res/layout/activity_main.xml" value="0.17239583333333333" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/AndroidInternAssignment2/app/src/main/res/drawable-v24/backgroundtvshow.xml" value="0.1640625" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/AndroidInternAssignment2/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/AndroidInternAssignment2/app/src/main/res/layout/crew_list.xml" value="0.33" />
       </map>
     </option>
   </component>

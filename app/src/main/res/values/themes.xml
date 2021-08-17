@@ -5,8 +5,9 @@
         <item name="colorPrimary">@color/color_action_bar</item>
         <item name="colorPrimaryVariant">@color/color_status_bar</item>
         <item name="colorOnPrimary">@color/white</item>
+        <item name="android:windowBackground">@color/colorPrimary</item>
 
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">@color/colorPrimaryVariant</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/colorPrimary</item>
     </style>
 </resources>

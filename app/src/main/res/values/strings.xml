@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AndroidInternAssignment2</string>
+    <string name="crew_details">Crew Details</string>
 </resources>
