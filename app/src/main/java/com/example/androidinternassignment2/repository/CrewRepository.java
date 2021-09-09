@@ -8,7 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.example.androidinternassignment2.client.ApiClient;
+import com.example.androidinternassignment2.network.ApiClient;
 import com.example.androidinternassignment2.database.CrewDetailsDao;
 import com.example.androidinternassignment2.model.CrewDetails;
 
@@ -26,7 +26,7 @@ public class CrewRepository {
         this.crewDetailsDao = crewDetailsDao;
     }
 
-    public LiveData<List<CrewDetails>> getCrewDetails(){
+    public LiveData<List<CrewDetails>> getCrewDetailOnline(){
         Call<List<CrewDetails>> call = ApiClient.getApiClient().getDataInterface().getCrewDetails();
         call.enqueue(new Callback<List<CrewDetails>>() {
             @Override
@@ -43,11 +43,13 @@ public class CrewRepository {
         return liveData;
     }
 
+    //Use room database for these task
+
     public void addCrewDetails(CrewDetails crewDetails){
         crewDetailsDao.addCrewDetails(crewDetails);
     }
 
-    public LiveData<List<CrewDetails>> getCrewDetail(){
+    public LiveData<List<CrewDetails>> getCrewDetailOffline(){
         return crewDetailsDao.getCrewDetails();
     }
 

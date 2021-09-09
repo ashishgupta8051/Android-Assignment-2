@@ -1,6 +1,7 @@
 package com.example.androidinternassignment2;
 
-import static android.content.ContentValues.TAG;
+import static com.example.androidinternassignment2.utils.Credentials.MobileData;
+import static com.example.androidinternassignment2.utils.Credentials.WifiData;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
@@ -27,13 +28,8 @@ import com.example.androidinternassignment2.network.ConnectionModel;
 import com.example.androidinternassignment2.utils.ClickListener;
 import com.example.androidinternassignment2.viewmodel.CrewViewModel;
 
-import java.util.ArrayList;
-import java.util.List;
-
 
 public class MainActivity extends AppCompatActivity implements ClickListener {
-    public static final int WifiData = 1;
-    public static final int MobileData = 2;
     private ConnectionLiveData connectionLiveData;
     private CrewViewModel crewViewModel;
     private RecyclerView recyclerView;
@@ -80,14 +76,14 @@ public class MainActivity extends AppCompatActivity implements ClickListener {
 
     @SuppressLint("NotifyDataSetChanged")
     private void clearAllData(DialogInterface dialog) {
-        crewViewModel.getCrewDetails().observe(this,response ->{
+        crewViewModel.getCrewDetailOnline().observe(this, response ->{
             for (int i = 0;i < response.size();i++){
                 CrewDetails crewDetails = response.get(i);
                 crewViewModel.removeAllDetails(crewDetails);
             }
             progressBar.setVisibility(View.VISIBLE);
             recyclerView.setAdapter(null);
-            crewViewModel.getCrewDetail().observe(this,response2 ->{
+            crewViewModel.getCrewDetailOffline().observe(this, response2 ->{
                 progressBar.setVisibility(View.GONE);
                 crewDetailsAdapter.getCrewData(response2);
                 recyclerView.setAdapter(crewDetailsAdapter);
@@ -120,7 +116,7 @@ public class MainActivity extends AppCompatActivity implements ClickListener {
     private void getCrewDetail() {
         progressBar.setVisibility(View.VISIBLE);
         recyclerView.setAdapter(null);
-        crewViewModel.getCrewDetail().observe(this,response ->{
+        crewViewModel.getCrewDetailOffline().observe(this, response ->{
             progressBar.setVisibility(View.GONE);
             crewDetailsAdapter.getCrewData(response);
             recyclerView.setAdapter(crewDetailsAdapter);
@@ -131,7 +127,7 @@ public class MainActivity extends AppCompatActivity implements ClickListener {
     private void getCrewDetails() {
         progressBar.setVisibility(View.VISIBLE);
         recyclerView.setAdapter(null);
-        crewViewModel.getCrewDetails().observe(this,response ->{
+        crewViewModel.getCrewDetailOnline().observe(this, response ->{
             for (int i = 0;i < response.size();i++){
                 CrewDetails crewDetails = response.get(i);
                 crewViewModel.addCrewDetails(crewDetails);

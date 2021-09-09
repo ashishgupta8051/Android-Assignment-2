@@ -1,5 +1,8 @@
 package com.example.androidinternassignment2.network;
 
+import static com.example.androidinternassignment2.utils.Credentials.MobileData;
+import static com.example.androidinternassignment2.utils.Credentials.WifiData;
+
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -42,9 +45,9 @@ public class ConnectionLiveData extends LiveData<ConnectionModel> {
                     NetworkCapabilities capabilities = connectivityManager.getNetworkCapabilities(connectivityManager.getActiveNetwork());
                     if (capabilities != null) {
                         if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)) {
-                            postValue(new ConnectionModel(MainActivity.WifiData,true));
+                            postValue(new ConnectionModel(WifiData,true));
                         } else if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)) {
-                            postValue(new ConnectionModel(MainActivity.MobileData,true));
+                            postValue(new ConnectionModel(MobileData,true));
                         }
                     }else {
                         postValue(new ConnectionModel(0,false));

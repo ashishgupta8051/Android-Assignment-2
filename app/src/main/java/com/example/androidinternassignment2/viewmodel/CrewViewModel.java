@@ -1,11 +1,9 @@
 package com.example.androidinternassignment2.viewmodel;
 
 import android.app.Application;
-import android.content.Context;
 
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.ViewModel;
 
 import com.example.androidinternassignment2.database.CrewDetailsDao;
 import com.example.androidinternassignment2.database.CrewDetailsDatabase;
@@ -24,16 +22,18 @@ public class CrewViewModel extends AndroidViewModel {
         crewRepository = new CrewRepository(crewDetailsDao);
     }
 
-    public LiveData<List<CrewDetails>> getCrewDetails(){
-        return crewRepository.getCrewDetails();
+    public LiveData<List<CrewDetails>> getCrewDetailOnline(){
+        return crewRepository.getCrewDetailOnline();
     }
+
+    //Use room database for these task
 
     public void addCrewDetails(CrewDetails crewDetails){
         crewRepository.addCrewDetails(crewDetails);
     }
 
-    public LiveData<List<CrewDetails>> getCrewDetail(){
-        return crewRepository.getCrewDetail();
+    public LiveData<List<CrewDetails>> getCrewDetailOffline(){
+        return crewRepository.getCrewDetailOffline();
     }
 
     public void removeAllDetails(CrewDetails crewDetails){
