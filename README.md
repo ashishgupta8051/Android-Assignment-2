@@ -1,2 +1,3 @@
+![Screenshot_2021-09-12-16-52-56-166_com example androidinternassignment2](https://user-images.githubusercontent.com/59619397/132985692-d502e7fa-5e4a-4e25-8cda-945175322927.jpg)
 # Android-Intern-Assignment-2
 It's my android intern assignment where i created my android application. In this app display information about SpaceX crew members  by consuming a rest api and storing the data (using Room Persistence Library) to display when the user is offline.Show Buttons Refresh and Delete entire stored data from the Room database. ○ Display following attributes - name, agency, image(display image in app), wikipedia(hyperlink), status.
