@@ -1,0 +1,2 @@
+# Android-Intern-Assignment-2
+It's my android intern assignment where i created my android application. In this app display information about SpaceX crew members  by consuming a rest api and storing the data (using Room Persistence Library) to display when the user is offline.Show Buttons Refresh and Delete entire stored data from the Room database. ○ Display following attributes - name, agency, image(display image in app), wikipedia(hyperlink), status.
